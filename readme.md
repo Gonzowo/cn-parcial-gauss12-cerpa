@@ -1,4 +1,4 @@
-# Evaluación 2: La Raiz que se Esconde
+# Evaluación 3: El Pivote
 
 Universidad Católica del Maule - Lab evaluado 3
 
