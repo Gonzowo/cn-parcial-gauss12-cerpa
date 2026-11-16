@@ -27,4 +27,32 @@ La estructura del repositorio se divide entre src (codigos python), resultados (
 
 La estructura del repositorio se divide entre src (codigos python), resultados (archivos generados), datos (matriz 12x12 y vector 1x12) y por ultimo en la carpeta raiz se encuentran los archivos de requerimientos para ejecutar el codigo, el informe, el readme del repositorio y el archivo .gitignore
 
-(pendiente arbol de estructura)
+
+```text
+cn-parcial-gauss12-cerpa/
+├── readme.md
+├── informe.md
+├── requirements.txt
+├── .gitignore
+├── datos/
+│   ├── matriz_a.csv
+│   └── vector_b.csv
+├── src/
+│   ├── conteo.py
+│   ├── gauss.py
+│   ├── verificacion.py
+│   └── main.py
+└── resultados/
+    ├── solucion.csv
+    ├── traza_eliminacion.txt
+    ├── conteo_flops.md
+    └── residuo.txt
+```
+
+### Resultado resumido
+
+### Enlace al informe.md
+Mas detalles del problema, como se llegó al resultado, el metodo utilizado y el analisis del error en el archivo [informe](informe.md)
+
+### Licencia
+Proyecto desarrollado con fines académicos utilizando Python y NumPy, herramientas de código abierto que no requieren licencias de pago para su uso. Hecho por Gonzalo Cerpa Salas para la asignatura Computación Numérica (INF-321) de la Universidad Católica del Maule

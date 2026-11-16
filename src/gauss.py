@@ -1,8 +1,4 @@
 """Eliminación gaussiana propia en doble precisión con factores reutilizables.
-
-No se calcula la inversa ni se utilizan solucionadores de biblioteca. El conteo
-principal incluye eliminación de A, actualización de b y sustitución regresiva.
-Las operaciones para seleccionar pivotes escalados se registran aparte.
 """
 
 from dataclasses import dataclass

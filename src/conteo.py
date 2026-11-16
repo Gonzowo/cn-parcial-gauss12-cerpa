@@ -1,8 +1,4 @@
-"""Conteo de operaciones ejecutadas, sin dependencias externas.
-
-Una suma, resta, multiplicación o división equivale a una flop. Comparaciones,
-valores absolutos e intercambios de filas se informan sin sumarlos a las flops.
-No se cuentan validaciones, copias, asignaciones ni cálculos de diagnóstico.
+"""Conteo de operaciones ejecutadas.
 """
 
 from dataclasses import dataclass

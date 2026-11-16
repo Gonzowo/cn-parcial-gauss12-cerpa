@@ -1,9 +1,4 @@
 """Validación independiente de los datos decimales originales.
-
-NumPy se usa para normas, condicionamiento y el control de biblioteca.
-Fraction conserva exactamente los decimales de entrada y los float64 de salida:
-el residuo se obtiene sin error de redondeo y solo se redondea al mostrarlo.
-La resolución racional auxiliar sirve exclusivamente como referencia de validación.
 """
 
 from dataclasses import dataclass
