@@ -69,13 +69,6 @@ def _sustitucion_regresiva(u, b, contador: Contador) -> np.ndarray:
 
 def gauss(a, b, pivoteo: str = "escalado") -> ResultadoGauss:
     """Resuelve Ax=b sin modificar las entradas.
-
-    pivoteo puede ser 'ninguno' o 'escalado'. En el segundo caso las escalas
-    se calculan una vez sobre las filas originales y acompañan sus intercambios.
-    Los empates se resuelven eligiendo la primera fila candidata.
-
-    El crecimiento es max_{i,j,k}|a_ij^(k)| / max_{i,j}|a_ij|, incluyendo la
-    matriz inicial y todas las etapas, excluyendo L y el lado derecho.
     """
     if pivoteo not in ("ninguno", "escalado"):
         raise ValueError("El pivoteo debe ser 'ninguno' o 'escalado'.")
