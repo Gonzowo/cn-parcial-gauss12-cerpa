@@ -1,6 +1,6 @@
 # Costo de las dos estrategias
 
-Referencia del enunciado para n=12: aproximadamente 1486 flops, tolerancia ±10 %.
+Para n=12: aproximadamente 1486 flops, tolerancia ±10 %.
 La asignación directa de los 66 ceros evita 132 flops: 1486 - 132 = 1354.
 Se compara con la referencia el costo principal; el pivoteo se informa aparte.
 No se incluyen en él diagnósticos, residuo exacto, referencia racional ni control NumPy.
@@ -8,11 +8,6 @@ No se incluyen en él diagnósticos, residuo exacto, referencia racional ni cont
 ## Estrategia: ninguno
 
 ### Conteo principal
-
-Convención: 1 flop por suma, resta, multiplicación o división.
-Comparaciones, valores absolutos e intercambios no son flops.
-Se excluyen validaciones, copias, asignaciones y diagnósticos.
-
 | Fase | Paso | Mult./div. | Sumas/restas | Flops | Comparaciones | Abs. | Intercambios |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | eliminacion | 1 | 132 | 121 | 253 | 0 | 0 | 0 |

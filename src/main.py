@@ -58,7 +58,7 @@ def main() -> None:
 
     traza = ['TRAZAS DE ELIMINACIÓN', 'Valores float64 mostrados con 17 cifras decimales.', '']
     conteo = ['# Costo de las dos estrategias', '',
-              'Referencia del enunciado para n=12: aproximadamente 1486 flops, tolerancia ±10 %.',
+              'Para n=12: aproximadamente 1486 flops, tolerancia ±10 %.',
               'La asignación directa de los 66 ceros evita 132 flops: 1486 - 132 = 1354.',
               'Se compara con la referencia el costo principal; el pivoteo se informa aparte.',
               'No se incluyen en él diagnósticos, residuo exacto, referencia racional ni control NumPy.', '']

@@ -93,8 +93,10 @@ def cifras_defendibles(valor, referencia: Fraction, maximo: int = 17) -> int:
     """Criterio conservador: cota relativa y coincidencia de redondeo decimal.
 
     Para d cifras se exige error relativo <= 0.5*10**(1-d), y que el valor
-    publicado redondee igual que la referencia a esas d cifras. Se comprueban
-    sucesivamente todas las precisiones hasta el primer incumplimiento.
+    publicado redondee igual que la referencia a esas d cifras. Se devuelve la
+    mayor precisión que satisface ambas condiciones. Un desacuerdo de redondeo
+    no descarta precisiones posteriores; solo la cota relativa permite detener
+    la búsqueda, porque se vuelve más estricta al aumentar d.
     """
     if referencia == 0:
         return maximo if racional(valor) == 0 else 0
@@ -102,11 +104,12 @@ def cifras_defendibles(valor, referencia: Fraction, maximo: int = 17) -> int:
     correctas = 0
     for d in range(1, maximo + 1):
         cota = Fraction(1, 2) * Fraction(10) ** (1 - d)
+        if error > cota:
+            break
         publicado = format(float(valor), f'.{d}g')
         esperado = decimal_texto(referencia, d)
-        if error > cota or Fraction(publicado) != Fraction(esperado):
-            break
-        correctas = d
+        if Fraction(publicado) == Fraction(esperado):
+            correctas = d
     return correctas
 
 
