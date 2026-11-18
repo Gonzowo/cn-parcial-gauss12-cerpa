@@ -8,6 +8,11 @@ No se incluyen en él diagnósticos, residuo exacto, referencia racional ni cont
 ## Estrategia: ninguno
 
 ### Conteo principal
+
+Convención: 1 flop por suma, resta, multiplicación o división.
+Comparaciones, valores absolutos e intercambios no son flops.
+Se excluyen validaciones, copias, asignaciones y diagnósticos.
+
 | Fase | Paso | Mult./div. | Sumas/restas | Flops | Comparaciones | Abs. | Intercambios |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | eliminacion | 1 | 132 | 121 | 253 | 0 | 0 | 0 |
