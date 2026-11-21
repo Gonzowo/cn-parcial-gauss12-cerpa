@@ -17,6 +17,9 @@ Multiplicador máximo: 2.75259283210263281e+13
 Factor de crecimiento durante toda la eliminación: 2.64122425482178187e+03
 Indicador log2(max(1,|m|max)): 44.645856 bits; es una escala de amplificación, no una medición exacta de bits perdidos.
 Error relativo inicial: 2.38017795801570657e-10
+Precisión global equivalente antes del refinamiento: 31.968212 bits.
+Pérdida equivalente respecto de 53 bits antes del refinamiento: 21.031788 bits.
+Estimaciones globales: precisión = -log2(error relativo inicial); pérdida = 53 - precisión. No son un conteo literal de bits descartados ni sustituyen la verificación por incógnita.
 Error relativo tras una pasada de refinamiento: 4.85536389662823451e-17
 Norma infinito antes: 1.771752003123465928474900e-7
 Norma infinito después: 2.603187369605071005196351e-10
@@ -42,6 +45,9 @@ Multiplicador máximo: 2.46555820065060043e+09
 Factor de crecimiento durante toda la eliminación: 1.78320233161712749e+00
 Indicador log2(max(1,|m|max)): 31.199267 bits; es una escala de amplificación, no una medición exacta de bits perdidos.
 Error relativo inicial: 2.70171345140033719e-13
+Precisión global equivalente antes del refinamiento: 41.751191 bits.
+Pérdida equivalente respecto de 53 bits antes del refinamiento: 11.248809 bits.
+Estimaciones globales: precisión = -log2(error relativo inicial); pérdida = 53 - precisión. No son un conteo literal de bits descartados ni sustituyen la verificación por incógnita.
 Error relativo tras una pasada de refinamiento: 4.85536389662823451e-17
 Norma infinito antes: 2.290876438497906470104226e-10
 Norma infinito después: 2.603187369605071005196351e-10

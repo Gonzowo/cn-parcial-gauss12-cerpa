@@ -58,7 +58,7 @@ def main() -> None:
 
     traza = ['TRAZAS DE ELIMINACIÓN', 'Valores float64 mostrados con 17 cifras decimales.', '']
     conteo = ['# Costo de las dos estrategias', '',
-              'Referencia del enunciado para n=12: aproximadamente 1486 flops, tolerancia ±10 %.',
+              'Para n=12: aproximadamente 1486 flops, tolerancia ±10 %.',
               'La asignación directa de los 66 ceros evita 132 flops: 1486 - 132 = 1354.',
               'Se compara con la referencia el costo principal; el pivoteo se informa aparte.',
               'No se incluyen en él diagnósticos, residuo exacto, referencia racional ni control NumPy.', '']
@@ -101,12 +101,24 @@ def main() -> None:
                        'Sobrecosto del refinamiento (incluye sumar la corrección):', '',
                        refinamiento.contador.reporte_markdown().replace('# Conteo de operaciones', '### Conteo del refinamiento', 1), ''])
         bits = max(0.0, float(np.log2(corrida.multiplicador_maximo))) if corrida.multiplicador_maximo else 0.0
+        if error_inicial > 0.0:
+            precision_bits = -float(np.log2(error_inicial))
+            perdida_bits = 53.0 - precision_bits
+            precision_texto = f'{precision_bits:.6f}'
+            perdida_texto = f'{perdida_bits:.6f}'
+        else:
+            # log2(0) no permite obtener una estimación finita.
+            precision_texto = 'no estimable con error relativo nulo'
+            perdida_texto = 'no estimable con error relativo nulo'
         verificacion.extend([
             f'ESTRATEGIA: {nombre}',
             f'Multiplicador máximo: {corrida.multiplicador_maximo:.17e}',
             f'Factor de crecimiento durante toda la eliminación: {corrida.factor_crecimiento:.17e}',
             f'Indicador log2(max(1,|m|max)): {bits:.6f} bits; es una escala de amplificación, no una medición exacta de bits perdidos.',
             f'Error relativo inicial: {error_inicial:.17e}',
+            f'Precisión global equivalente antes del refinamiento: {precision_texto} bits.',
+            f'Pérdida equivalente respecto de 53 bits antes del refinamiento: {perdida_texto} bits.',
+            'Estimaciones globales: precisión = -log2(error relativo inicial); pérdida = 53 - precisión. No son un conteo literal de bits descartados ni sustituyen la verificación por incógnita.',
             f'Error relativo tras una pasada de refinamiento: {error_refinado:.17e}',
             f'Norma infinito antes: {decimal_texto(refinamiento.norma_antes)}',
             f'Norma infinito después: {decimal_texto(refinamiento.norma_despues)}',

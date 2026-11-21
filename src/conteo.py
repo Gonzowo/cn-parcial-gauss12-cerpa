@@ -21,9 +21,6 @@ class Operaciones:
 
 class Contador:
     """Acumula registros por fase y paso (numerados desde 1).
-
-    El paso 0 se reserva para la preparación de las escalas. Las fases cuyo
-    nombre empieza por 'pivoteo' son sobrecosto de estabilidad.
     """
 
     def __init__(self) -> None:
